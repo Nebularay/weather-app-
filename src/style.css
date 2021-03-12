@@ -1,0 +1,180 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+}
+.container {
+  width: fit-content;
+  padding: 30px;
+  margin-top: 50px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 30px;
+  background-image: url("../Visuals/Partlycloudy.jpg");
+}
+
+.main-box {
+  display: block;
+}
+
+input {
+  border-radius: 30px;
+  padding: 5px;
+  border: 2px solid whitesmoke;
+  position: relative;
+  right: -30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.units {
+  font-size: 16px;
+}
+
+.day-summary {
+  text-align: center;
+  position: relative;
+  right: 16px;
+}
+
+.current-date {
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.city {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.top-temperature {
+  font-size: 40px;
+}
+
+.main-icon {
+  position: relative;
+  left: 10px;
+}
+
+p {
+  font-size: small;
+  line-height: 0%;
+  font-weight: lighter;
+}
+.conditions {
+  text-align: center;
+  font-size: small;
+}
+
+.wind {
+  position: relative;
+  right: -75px;
+  font-style: italic;
+}
+
+.km-speed {
+  position: relative;
+  right: -78px;
+  font-weight: bold;
+}
+
+.humidity {
+  position: relative;
+  left: -80px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.humidity-percentage {
+  position: relative;
+  left: -78px;
+  font-weight: bold;
+}
+
+.precipitation {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.cm-measure {
+  font-weight: bold;
+  position: relative;
+  right: -2px;
+}
+
+.box p {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.box {
+  border: 3px solid #ffffff;
+  border-radius: 30px;
+  box-shadow: 5px 2px 5px 2px white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  font-size: small;
+}
+
+.card-one {
+  position: relative;
+  right: -70px;
+}
+
+.card-two {
+  position: relative;
+  right: -40px;
+}
+
+.card-four {
+  position: relative;
+  left: -35px;
+}
+
+.card-five {
+  position: relative;
+  left: -65px;
+}
+.card-details-one {
+  position: relative;
+  right: -70px;
+}
+
+.card-details-two {
+  position: relative;
+  right: -40px;
+}
+
+.card-details-three {
+  position: relative;
+  left: 4px;
+}
+
+.card-details-four {
+  position: relative;
+  right: 32px;
+}
+
+.card-details-five {
+  position: relative;
+  left: -64px;
+}
+
+.sec-temperature {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.date {
+  font-size: smaller;
+  font-weight: bold;
+}

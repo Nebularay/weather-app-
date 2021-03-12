@@ -1,0 +1,81 @@
+let now = new Date();
+let currentDate = document.querySelector("#current-date");
+let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+let minutes = now.getMinutes("mm");
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+let day = days[now.getDay()];
+
+currentDate.innerHTML = `${day}, ${hours}:${minutes}`;
+
+function showWeather(response) {
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#top-temperature").innerHTML = Math.round(response.data.main.temp
+    
+  );
+
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed
+  );
+
+  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+
+  document.querySelector("#min-temp").innerHTML = Math.round(response.data.main.temp_min);
+  document.querySelector("#max-temp").innerHTML = Math.round(response.data.main.temp_max);
+  
+
+}
+function search(city){
+  let apiKey = "d2b10ca1f78d20c42dc47e5254cff8b1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  search(city);
+  
+  
+}
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#top-temperature");
+  temperatureElement.innerHTML = 50;
+}
+
+function convertToCelcius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#top-temperature");
+  temperatureElement.innerHTML = 10;
+}
+
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", convertToCelcius);
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+search("Utrecht");
+
+
+
