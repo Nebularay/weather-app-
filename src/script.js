@@ -26,11 +26,17 @@ function showWeather(response) {
   document.querySelector("#top-temperature").innerHTML = Math.round(response.data.main.temp
     
   );
+  
+  let iconElement = document.querySelector ("#main-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed
   );
-
+  
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
 
   document.querySelector("#min-temp").innerHTML = Math.round(response.data.main.temp_min);
