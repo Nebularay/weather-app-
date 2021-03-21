@@ -157,6 +157,25 @@ function showForecast(response) {
         </div>
     </div>
   `;  
+
+  // forecast = response.data.list[5];
+  // forecastElement.innerHTML += `
+  //   <div class="col">
+  //       <div class="card-two" style="width: 6rem;">
+  //         <p>
+  //           ${formatHours(forecast.dt *1000)}
+  //         </p>
+  //         <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+  //         <div class="card-body-two">
+  //         </div>
+  //       </div>
+  //       <div class="card-details-two" style="width: 6rem;">
+  //         <ul class="list-group list-group-flush">
+  //         <li class="sec-temperature">${Math.round(forecast.main.temp_max)}°C / ${Math.round(forecast.main.temp_min)}°C </li>
+  //         </ul>
+  //       </div>
+  //   </div>
+  // `;  
 }
 
 
