@@ -139,7 +139,7 @@ function showForecast(response) {
     </div>
   `;  
 
-  forecast = response.data.list[3];
+  forecast = response.data.list[4];
   forecastElement.innerHTML += `
     <div class="col">
         <div class="card-two" style="width: 6rem;">
