@@ -21,6 +21,22 @@ let day = days[now.getDay()];
 
 currentDate.innerHTML = `${day}, ${hours}:${minutes}`;
 
+function formatHours(timestamp) {
+  
+  let forecastDate = new Date(timestamp);
+  let hours = forecastDate.getHours();
+  if (hours < 10) {
+  hours = `0${hours}`;
+  }
+  let minutes = forecastDate.getMinutes("mm");
+  if (minutes < 10) {
+  minutes = `0${minutes}`;
+  }
+
+  return `${hours}: ${minutes}`;
+  
+}
+
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#top-temperature").innerHTML = Math.round(response.data.main.temp
@@ -42,12 +58,115 @@ function showWeather(response) {
   document.querySelector("#min-temp").innerHTML = Math.round(response.data.main.temp_min);
   document.querySelector("#max-temp").innerHTML = Math.round(response.data.main.temp_max);
   
-
 }
+
+function showForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+  forecastElement.innerHTML = `
+    <div class="col">
+        
+        <div class="card-one" style="width: 6rem;">
+          <p>
+            ${formatHours(forecast.dt *1000)}
+          </p>
+          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          <div class="card-body-one">
+          </div>
+        </div>
+        <div class="card-details-one" style="width: 6rem;">
+          <ul class="list-group list-group-flush">
+          <li class="sec-temperature">${Math.round(forecast.main.temp_max)}°C / ${Math.round(forecast.main.temp_min)}°C </li>
+          </ul>
+        </div>
+    </div>
+  `;  
+  
+  forecast = response.data.list[1];
+  forecastElement.innerHTML += `
+    <div class="col">
+        <div class="card-two" style="width: 6rem;">
+          <p>
+            ${formatHours(forecast.dt *1000)}
+          </p>
+          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          <div class="card-body-two">
+          </div>
+        </div>
+        <div class="card-details-two" style="width: 6rem;">
+          <ul class="list-group list-group-flush">
+          <li class="sec-temperature">${Math.round(forecast.main.temp_max)}°C / ${Math.round(forecast.main.temp_min)}°C </li>
+          </ul>
+        </div>
+    </div>
+  `;  
+
+  forecast = response.data.list[2];
+  forecastElement.innerHTML += `
+    <div class="col">
+        <div class="card-two" style="width: 6rem;">
+          <p>
+            ${formatHours(forecast.dt *1000)}
+          </p>
+          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          <div class="card-body-two">
+          </div>
+        </div>
+        <div class="card-details-two" style="width: 6rem;">
+          <ul class="list-group list-group-flush">
+          <li class="sec-temperature">${Math.round(forecast.main.temp_max)}°C / ${Math.round(forecast.main.temp_min)}°C </li>
+          </ul>
+        </div>
+    </div>
+  `;  
+
+  forecast = response.data.list[3];
+  forecastElement.innerHTML += `
+    <div class="col">
+        <div class="card-two" style="width: 6rem;">
+          <p>
+            ${formatHours(forecast.dt *1000)}
+          </p>
+          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          <div class="card-body-two">
+          </div>
+        </div>
+        <div class="card-details-two" style="width: 6rem;">
+          <ul class="list-group list-group-flush">
+          <li class="sec-temperature">${Math.round(forecast.main.temp_max)}°C / ${Math.round(forecast.main.temp_min)}°C </li>
+          </ul>
+        </div>
+    </div>
+  `;  
+
+  forecast = response.data.list[3];
+  forecastElement.innerHTML += `
+    <div class="col">
+        <div class="card-two" style="width: 6rem;">
+          <p>
+            ${formatHours(forecast.dt *1000)}
+          </p>
+          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          <div class="card-body-two">
+          </div>
+        </div>
+        <div class="card-details-two" style="width: 6rem;">
+          <ul class="list-group list-group-flush">
+          <li class="sec-temperature">${Math.round(forecast.main.temp_max)}°C / ${Math.round(forecast.main.temp_min)}°C </li>
+          </ul>
+        </div>
+    </div>
+  `;  
+}
+
+
 function search(city){
   let apiKey = "d2b10ca1f78d20c42dc47e5254cff8b1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
 
 }
 
@@ -55,7 +174,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
   search(city);
-  
   
 }
 
