@@ -1,7 +1,7 @@
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: black;
+  color: white;
 }
 .container {
   width: fit-content;
@@ -10,8 +10,8 @@ body {
   display: block;
   margin: 0 auto;
   border-radius: 30px;
-  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
-  /* background-image: url("../Visuals/Partlycloudy.jpg"); */
+  /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
+  background-image: url("../Visuals/pexels-photo-2680270.jpeg");
 }
 
 .main-box {
@@ -28,18 +28,12 @@ input {
 
 h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .units {
   font-size: 16px;
-}
-
-.day-summary {
-  text-align: center;
-  position: relative;
-  right: 16px;
 }
 
 .current-date {
@@ -66,9 +60,11 @@ p {
   line-height: 0%;
   font-weight: lighter;
 }
+
 .day-summary {
   text-align: center;
-  font-size: 16px;
+  position: relative;
+  right: 16px;
 }
 
 .wind {
@@ -109,9 +105,9 @@ p {
 }
 
 .box {
-  border: 3px solid #ffffff;
-  border-radius: 30px;
-  box-shadow: 5px 2px 5px 2px white;
+  /* border: 3px solid #ffffff; */
+  /* border-radius: 30px;
+  /* box-shadow: 5px 2px 5px 2px white; */
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -168,7 +164,7 @@ ul {
 
 .sec-temperature {
   font-weight: bold;
-  font-size: small;
+  font-size: 10px;
   position: relative;
 }
 
