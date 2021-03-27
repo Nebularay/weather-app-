@@ -65,25 +65,28 @@ function showForecast(response) {
   let forecast = null;
 
 
-  for (let index = 0; index < 5; index ++) {
+  for (let index = 0; index < 6; index ++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
     <div class="col">
-        <div class="card-two" style="width: 6rem;">
-          <p>
-            ${formatHours(forecast.dt *1000)}
-          </p>
+        <div class = "card-time" style="width: 6rem;">
+         ${formatHours(forecast.dt *1000)}
+        </div>
+        <div class="card-one" style="width: 6rem;">
           <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
           <div class="card-body-two">
           </div>
         </div>
-        <div class="card-details-two" style="width: 6rem;">
+        <div class="card-details-one" style="width: 6rem;">
           <ul class="list-group list-group-flush">
           <li class="sec-temperature">${Math.round(forecast.main.temp_max)}°C / ${Math.round(forecast.main.temp_min)}°C </li>
           </ul>
         </div>
+        <br/> 
     </div>
   `;  
+
+    
   
 
   // for (let index = 0; index < 6; index = ++) {

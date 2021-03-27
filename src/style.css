@@ -127,48 +127,14 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.card-two {
-  position: relative;
-  right: -10px;
-}
-
-.card-four {
-  position: relative;
-  left: -35px;
-}
-
-.card-five {
-  position: relative;
-  left: -65px;
-}
 .card-details-one {
-  /* position: relative;
-  right: -30px; */
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.card-details-two {
-  position: relative;
-  right: -40px;
-}
-
-.card-details-three {
-  position: relative;
-  left: 4px;
-}
-
-.card-details-four {
-  position: relative;
-  right: 32px;
-}
-
-.card-details-five {
-  position: relative;
-  left: -64px;
 }
 
 .sec-temperature {
