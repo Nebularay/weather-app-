@@ -145,3 +145,13 @@ ul {
   font-size: 10px;
   position: relative;
 }
+
+.active {
+  color: #ffffff;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: unset;
+}
