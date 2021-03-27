@@ -63,6 +63,8 @@ function showWeather(response) {
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecast = null;
+  forecastElement.innerHTML = ``;
+
 
 
   for (let index = 0; index < 6; index ++) {
